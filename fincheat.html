@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Finance Cheat Sheet — Key Formulas 20</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@500;600;700&display=swap');
+
+  :root{
+    --ink:#0E1F2B;
+    --paper:#F6F3EC;
+    --teal:#0F5E5A;
+    --gold:#C08A2E;
+    --rule:#D8D1C2;
+    --num-bg:#0E1F2B;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Pretendard','Apple SD Gothic Neo',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{
+    max-width:980px;
+    margin:0 auto;
+    padding:40px 36px 60px;
+  }
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    border-bottom:3px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:6px;
+  }
+  h1{
+    font-family:'Pretendard','Apple SD Gothic Neo',sans-serif;
+    font-size:42px;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.5px;
+  }
+  .subtitle{
+    font-size:14px;
+    color:var(--teal);
+    font-weight:600;
+    letter-spacing:1.5px;
+    margin-top:6px;
+  }
+  .meta{
+    text-align:right;
+    font-size:13px;
+    color:#6b6356;
+    line-height:1.6;
+  }
+  .meta b{color:var(--ink);}
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:18px;
+  }
+  thead th{
+    text-align:left;
+    font-size:12px;
+    letter-spacing:1px;
+    color:#fff;
+    background:var(--ink);
+    padding:9px 12px;
+    font-weight:600;
+  }
+  thead th:first-child{
+    width:36px;
+    text-align:center;
+  }
+  thead th:nth-child(2){width:170px;}
+  thead th:nth-child(3){width:260px;}
+
+  tbody tr{
+    border-bottom:1px solid var(--rule);
+  }
+  tbody tr:nth-child(even){
+    background:rgba(192,138,46,0.06);
+  }
+  td{
+    padding:10px 12px;
+    vertical-align:top;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .num{
+    text-align:center;
+    font-family:'Pretendard',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    color:var(--teal);
+  }
+  .metric{
+    font-weight:700;
+    font-size:16px;
+  }
+  .metric .en{
+    display:block;
+    font-size:13px;
+    color:#8a8273;
+    font-weight:500;
+    letter-spacing:0.3px;
+    margin-top:1px;
+  }
+  .formula{
+    font-family:'Pretendard',sans-serif;
+    color:var(--ink);
+    font-size:15px;
+  }
+  .def{
+    color:#332f28;
+  }
+
+  footer{
+    margin-top:24px;
+    padding-top:12px;
+    border-top:1px solid var(--rule);
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+    color:#9a9281;
+  }
+  .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:2px;
+    letter-spacing:0.5px;
+    margin-left:8px;
+  }
+
+  @media print{
+    @page{ size:A4; margin:10mm; }
+    body{background:#fff;}
+    .sheet{padding:15px 20px;}
+    header{padding-bottom:6px; margin-bottom:2px;}
+    h1{line-height:1;}
+    .subtitle{margin-top:2px;}
+    table{margin-top:6px;}
+    thead th{padding:4px 10px; line-height:1.1; font-size:11px;}
+    td{padding:4px 12px; line-height:1.15; font-size:13px;}
+    .num{font-size:13px;}
+    .metric{font-size:14px;}
+    .metric .en{margin-top:0; font-size:11px;}
+    .formula{font-size:13px;}
+    tr{page-break-inside:avoid;}
+    footer{margin-top:8px; padding-top:6px;}
+    thead th:nth-child(3){width:170px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <div>
+      <h1>Finance Cheat Sheet</h1>
+      <div class="subtitle">Core Financial & Investment Formulas 20</div>
+    </div>
+    <div class="meta">
+      원본: Saksham Goel <br>
+      <b>KR ver.</b>
+    </div>
+  </header>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>항목</th>
+        <th>공식</th>
+        <th>의미 / 활용</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td class="num">1</td>
+        <td class="metric">현재가치<span class="en">Present Value, PV</span></td>
+        <td class="formula">PV = FV / (1 + r)ⁿ</td>
+        <td class="def">미래 현금흐름을 요구수익률로 할인한 현재 시점의 가치.</td>
+      </tr>
+
+      <tr>
+        <td class="num">2</td>
+        <td class="metric">미래가치<span class="en">Future Value, FV</span></td>
+        <td class="formula">FV = PV × (1 + r)ⁿ</td>
+        <td class="def">현재 투자금이 복리로 불어나 미래에 얼마가 되는지를 보여줌.</td>
+      </tr>
+
+      <tr>
+        <td class="num">3</td>
+        <td class="metric">순현재가치<span class="en">Net Present Value, NPV</span></td>
+        <td class="formula">NPV = Σ CFₜ / (1 + r)ᵗ</td>
+        <td class="def">할인된 현금유입과 유출을 비교해 투자가 창출하는 가치를 측정.</td>
+      </tr>
+
+      <tr>
+        <td class="num">4</td>
+        <td class="metric">가중평균자본비용<span class="en">WACC</span></td>
+        <td class="formula">WACC = (E/V)Re + (D/V)Rd(1−Tc)</td>
+        <td class="def">자기자본과 타인자본을 가중평균한 자본비용으로, 밸류에이션 할인율로 사용.</td>
+      </tr>
+
+      <tr>
+        <td class="num">5</td>
+        <td class="metric">자본자산가격결정모형<span class="en">CAPM</span></td>
+        <td class="formula">Re = Rf + β(Rm − Rf)</td>
+        <td class="def">베타(시장 위험)를 기반으로 투자자가 요구하는 기대수익률을 추정.</td>
+      </tr>
+
+      <tr>
+        <td class="num">6</td>
+        <td class="metric">주당순이익<span class="en">EPS</span></td>
+        <td class="formula">EPS = 순이익 / 유통주식수</td>
+        <td class="def">보통주 1주당 회사가 벌어들이는 이익 규모.</td>
+      </tr>
+
+      <tr>
+        <td class="num">7</td>
+        <td class="metric">주가수익비율<span class="en">P/E Ratio</span></td>
+        <td class="formula">P/E = 주가 / EPS</td>
+        <td class="def">투자자가 주당 순이익 1원당 얼마를 지불할 의향이 있는지를 나타냄.</td>
+      </tr>
+
+      <tr>
+        <td class="num">8</td>
+        <td class="metric">부채비율<span class="en">Debt-to-Equity</span></td>
+        <td class="formula">D/E = 총부채 / 자기자본</td>
+        <td class="def">자기자본 대비 부채 규모로 재무 레버리지를 측정.</td>
+      </tr>
+
+      <tr>
+        <td class="num">9</td>
+        <td class="metric">자기자본이익률<span class="en">ROE</span></td>
+        <td class="formula">ROE = 순이익 / 자기자본</td>
+        <td class="def">주주 투자금을 활용해 얼마나 효율적으로 이익을 내는지 측정.</td>
+      </tr>
+
+      <tr>
+        <td class="num">10</td>
+        <td class="metric">총자산수익률<span class="en">ROA</span></td>
+        <td class="formula">ROA = 순이익 / 총자산</td>
+        <td class="def">총자산을 활용해 얼마나 효과적으로 이익을 창출하는지 나타냄.</td>
+      </tr>
+
+      <tr>
+        <td class="num">11</td>
+        <td class="metric">투자수익률<span class="en">ROI</span></td>
+        <td class="formula">ROI = (투자수익 − 비용) / 비용</td>
+        <td class="def">투입한 비용 대비 투자에서 얻은 수익률을 측정.</td>
+      </tr>
+
+      <tr>
+        <td class="num">12</td>
+        <td class="metric">유동비율<span class="en">Current Ratio</span></td>
+        <td class="formula">유동비율 = 유동자산 / 유동부채</td>
+        <td class="def">유동자산으로 단기 채무를 상환할 수 있는 능력을 측정.</td>
+      </tr>
+
+      <tr>
+        <td class="num">13</td>
+        <td class="metric">당좌비율<span class="en">Quick Ratio</span></td>
+        <td class="formula">당좌비율 = (유동자산 − 재고) / 유동부채</td>
+        <td class="def">재고를 제외한 더 엄격한 단기 유동성 지표.</td>
+      </tr>
+
+      <tr>
+        <td class="num">14</td>
+        <td class="metric">에비타<span class="en">EBITDA</span></td>
+        <td class="formula">EBITDA = 순이익 + 이자 + 세금 + 감가상각</td>
+        <td class="def">회계·금융 효과를 제외한 핵심 영업이익을 보여줌.</td>
+      </tr>
+
+      <tr>
+        <td class="num">15</td>
+        <td class="metric">투자회수기간<span class="en">Payback Period</span></td>
+        <td class="formula">회수기간 = 초기투자금 / 연간현금유입</td>
+        <td class="def">초기 투자금을 현금흐름으로 회수하는 데 걸리는 시간.</td>
+      </tr>
+
+      <tr>
+        <td class="num">16</td>
+        <td class="metric">배당수익률<span class="en">Dividend Yield</span></td>
+        <td class="formula">배당수익률 = 연간 주당배당금 / 주가</td>
+        <td class="def">주가 대비 연간 배당소득의 비율.</td>
+      </tr>
+
+      <tr>
+        <td class="num">17</td>
+        <td class="metric">기업가치<span class="en">Enterprise Value, EV</span></td>
+        <td class="formula">EV = 시가총액 + 총부채 + 우선주 − 현금성자산</td>
+        <td class="def">부채와 우선주를 포함하고 현금을 제외한 기업 전체 가치.</td>
+      </tr>
+
+      <tr>
+        <td class="num">18</td>
+        <td class="metric">이자보상비율<span class="en">Interest Coverage</span></td>
+        <td class="formula">이자보상비율 = EBIT / 이자비용</td>
+        <td class="def">영업이익으로 이자비용을 얼마나 여유 있게 감당하는지 측정.</td>
+      </tr>
+
+      <tr>
+        <td class="num">19</td>
+        <td class="metric">샤프비율<span class="en">Sharpe Ratio</span></td>
+        <td class="formula">Sharpe = (Rp − Rf) / σp</td>
+        <td class="def">총위험(변동성) 대비 초과수익을 비교한 위험조정수익률.</td>
+      </tr>
+
+      <tr>
+        <td class="num">20</td>
+        <td class="metric">베타<span class="en">Beta, β</span></td>
+        <td class="formula">β = Cov(Ri, Rm) / Var(Rm)</td>
+        <td class="def">시장 전체 움직임에 대한 개별 종목의 체계적 위험(민감도).</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <footer>
+    <span>Core Financial & Investment Formulas 20</span>
+    <span>FORMULAS &amp; DEFINITIONS</span>
+  </footer>
+
+</div>
+</body>
+</html>
